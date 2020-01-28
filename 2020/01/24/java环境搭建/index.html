@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="java环境搭建 | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="java基本类型 boolean: java的布尔类型只能是true或者false byte: 1个字节即8位，取值范围[-128,127) short:2个字节,取值范围[-2^15,2^15-1) int:4个字节 long: 8个字节,long赋值的时候要在末尾加上L float:4个字节,末尾加上f double: 8个字节,末尾加上d(可以省略) char: 8个字节  java方法ja">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://panxiakai.com/2020/01/24/hello-world/index.html">
+<meta property="og:title" content="java基础知识">
+<meta property="og:url" content="http://panxiakai.com/2020/01/28/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="岁月静好">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="java基本类型 boolean: java的布尔类型只能是true或者false byte: 1个字节即8位，取值范围[-128,127) short:2个字节,取值范围[-2^15,2^15-1) int:4个字节 long: 8个字节,long赋值的时候要在末尾加上L float:4个字节,末尾加上f double: 8个字节,末尾加上d(可以省略) char: 8个字节  java方法ja">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-24T00:48:22.893Z">
-<meta property="article:modified_time" content="2020-01-24T00:48:22.893Z">
+<meta property="article:published_time" content="2020-01-28T10:08:21.000Z">
+<meta property="article:modified_time" content="2020-01-28T10:09:47.089Z">
 <meta property="article:author" content="Leo">
 <meta name="twitter:card" content="summary">
 
@@ -22,8 +22,6 @@
 <link rel="icon" href="/img/avatar.jpg">
 
 <link href="/css/style.css?v=1.0.1" rel="stylesheet">
-
-<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
 
 <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -162,7 +160,7 @@
         
     
         
-        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+        <a title="email" href="mailto:17858936126@163.com" target="_blank">
             
                 <svg class="iconfont-svg" aria-hidden="true">
                     <use xlink:href="#icon-email"></use>
@@ -172,7 +170,7 @@
         
     
         
-        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1102605958&site=qq&menu=yes" target="_blank">
             
                 <svg class="iconfont-svg" aria-hidden="true">
                     <use xlink:href="#icon-qq"></use>
@@ -207,15 +205,15 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(2)</small></div></li>
+    <li><div class="all active">全部文章<small>(3)</small></div></li>
     
         
             
-            <li><div data-rel="后端"><i class="fold iconfont icon-right"></i>后端<small>(1)</small></div>
+            <li><div data-rel="后端"><i class="fold iconfont icon-right"></i>后端<small>(2)</small></div>
                 
                     <ul class="sub hide">
                         
-                        <li><div data-rel="java">java<small>(1)</small></div>
+                        <li><div data-rel="java">java<small>(2)</small></div>
                             
                         </li>
                             
@@ -239,7 +237,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="2">
+<input type="hidden" id="yelog_site_posts_number" value="3">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -278,6 +276,14 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class="后端 java "
+           href="/2020/01/28/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java基础知识">java基础知识</span>
+            <span class="post-date" title="2020-01-28 18:08:21">2020/01/28</span>
+        </a>
         
         <a  class=""
            href="/2020/01/24/hello-world/"
@@ -492,20 +498,6 @@
 
         /*高亮代码块行号*/
         
-        $('pre code').each(function(){
-            var lines = $(this).text().split('\n').length - 1, widther='';
-            if (lines>99) {
-                widther = 'widther'
-            }
-            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
-            $(this).addClass('has-numbering ' + widther)
-                    .parent()
-                    .append($numbering);
-            for(var i=1;i<=lines;i++){
-                $numbering.append($('<li/>').text(i));
-            }
-        });
-        
 
         /*访问数量*/
         
@@ -530,38 +522,6 @@
 </script>
 
 <!--加入行号的高亮代码块样式-->
-
-<style>
-    pre{
-        position: relative;
-        margin-bottom: 24px;
-        border-radius: 10px;
-        border: 1px solid #e2dede;
-        background: #FFF;
-        overflow: hidden;
-    }
-    code.has-numbering{
-        margin-left: 30px;
-    }
-    code.has-numbering.widther{
-        margin-left: 35px;
-    }
-    .pre-numbering{
-        margin: 0px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 20px;
-        padding: 0.5em 3px 0.7em 5px;
-        border-right: 1px solid #C3CCD0;
-        text-align: right;
-        color: #AAA;
-        background-color: #fafafa;
-    }
-    .pre-numbering.widther {
-        width: 35px;
-    }
-</style>
 
 <!--自定义样式设置-->
 <style>
