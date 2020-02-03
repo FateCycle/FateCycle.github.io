@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>java的访问控制 | 岁月静好</title>
+  <title>java文件整体属性 | 岁月静好</title>
   <meta name="keywords" content="">
-  <meta name="description" content="java的访问控制 | 岁月静好">
+  <meta name="description" content="java文件整体属性 | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Zip文件读写压缩包:zip,rar,gz,…. java zip包支持Zip和Gzip包的压缩和解压 zip压缩文件操作类java.util.zip ZipInputSTream,ZipOutputStream ZipEntry 压缩文件打开输出zip文件 添加一个ZipEntry(存放压缩文件路径的一个对象) 打开一个输入文件，读数据，向ZipEntry写数据，关闭输入文件 重复以上步骤，写入">
 <meta property="og:type" content="article">
@@ -532,9 +532,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-java的访问控制" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java文件整体属性" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">java的访问控制</h1>
+        <h1 class="article-title">java文件整体属性</h1>
     
     <div class="article-meta">
         
@@ -544,7 +544,9 @@
             
                 <a  data-rel="后端">后端</a>/
             
-                <a  data-rel="java">java</a>
+                <a  data-rel="java">java</a>/
+            
+                <a  data-rel="文件读写">文件读写</a>
             
         </span>
         
@@ -552,7 +554,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-03 17:38:43'>2020-02-03 17:07</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-03 17:46:52'>2020-02-03 17:44</time>
         
     </div>
     <div class="article-meta">
@@ -574,7 +576,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#访问控制"><span class="toc-text">访问控制</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件读写"><span class="toc-text">文件读写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件整体属性"><span class="toc-text">文件整体属性</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -590,61 +592,198 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h3><p>java的访问控制有四种</p>
-<ul>
-<li>private 私有的，只有本类才能访问</li>
-<li>default 默认,由于default不是关键字，所以通常不写，只有在同一个包下才能访问</li>
-<li>protected 同一个包或者子类均可访问</li>
-<li>public 公开，所有类均能访问</li>
-</ul>
-<p>上述四种均能修饰成员变量，成员方法，构造函数，但是只有default和public可以修饰类</p>
-<p>类内部访问就是直接调用变量，外部访问分两种，作为子类可以直接调用父类的变量，或者要在另一个包的类定义进行实例化类，在调用它的属性或者方法</p>
-<pre><code class="java">//  Visit
-package XXX;
+        <h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><p>文件系统是由操作系统来管理的，他和java进程是平行的，文件分隔符(linux/unix使用/分隔,window使用双反斜杠来分隔)</p>
+<h4 id="文件整体属性"><a href="#文件整体属性" class="headerlink" title="文件整体属性"></a>文件整体属性</h4><p>java.io.File来进行文件操作</p>
+<p>常用方法:</p>
+<p>createNewFile,delete,exists,getAbsolutePath,getName,getParent,getPath,isDirectory,isFile,length,listFile,mkdir,mkdirs</p>
+<p>File不涉及文件内容只涉及文件属性</p>
+<pre><code class="java">// 示例代码
+File dir =new File(&quot;D:/file&quot;);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
 
-public class Visit {
-    private int v1;
-    int v2;
-    protected int v3;
-    public int v4;
-    private void show1() {
-        System.out.print(v1);
-    }
+        System.out.println(dir.isDirectory());
+        File file = new File(&quot;D:/file/abc.txt&quot;);
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            }catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-    void show2() {
-        System.out.print(v2);
-    }
+        System.out.println(file.isFile());
+        System.out.println(file.getName());
+        System.out.println(file.getParent());
+        System.out.println(file.getPath());
+        System.out.println(file.length());
+        System.out.println(file.lastModified());
 
-    protected void show3() {
-        System.out.print(v3);
-    }
+        //不包含子文件夹
+        File[] filelist = dir.listFiles();
+        for(File f : filelist) {
+            System.out.println(file.getPath());
+        }
+    }</code></pre>
+<p>在java7提出的NIO包，提出新的文件系统类作为File类的补充</p>
+<p>path,File,DirectoryStream,FileVisitor,FileSystem使得可以实现文件的复制和移动，文件相对路径，递归遍历目录，递归删除目录等</p>
+<p>path类API:</p>
+<p>get  根据路径获取一个path</p>
+<p>resolve path拼接</p>
+<pre><code class="java">public class PathTest {
+    public static void main(String[] args) {
+        Path path1 = FileSystems.getDefault().getPath(&quot;D:/file&quot;, &quot;abc.txt&quot;);
+        System.out.println(path1.getNameCount());
 
-    protected void show4() {
-        System.out.println(v4);
-    }
+        File file = new File(&quot;D:/file/uuu.txt&quot;);
+        Path pathother = file.toPath();
+        System.out.println(path1.compareTo(pathother));
+        Path path2 = Paths.get(&quot;D:/file&quot;);
+        System.out.println(path2.resolve(&quot;uuu.txt&quot;));
 
-}
+        if(Files.isReadable(path1)) {
+            System.out.println(&quot;it is readable&quot;);
+        } else {
+            System.err.println(&quot;it is not readable&quot;);
+        }
 
 
-
-// YYY包下的TestVisit 
-package YYY;
-
-import XXX.Visit;
-
-public class TestVisit extends Visit {
-    void show() {
-        // 以子类方式调用，v2需要同包，v1私有
-        System.out.println(v3);
-        System.out.println(v4);
-        // 以对象调用，由于不同包，这个v是Visit也不是子类所以v3,v2均不能访问，v1私有
-        // 天然无法访问，所以只能访问v4
-        Visit v = new Visit();
-        System.out.println(v.v4);
     }
 
 }
 </code></pre>
+<p>File类API:</p>
+<p>noExists 测试所在文件是否存在</p>
+<p>isDirectory 判断是否是目录</p>
+<p>createDirectories 创建所有存在的父目录在创建当前需要目录,即:可以创建多级目录</p>
+<p>createFile  创建文件</p>
+<p>newDirectoryStream 打开一个目录</p>
+<p>readAttributes 读取属性</p>
+<pre><code class="java">public class FilesTet {
+
+    // 移动文件
+    public static void moveFile() {
+        // 将C:/temp/abc.txt 移动到C:/temp/test下并改名为abxxopy.txt
+        Path from = Paths.get(&quot;D:/file&quot;, &quot;abc.txt&quot;);
+        Path to = from.getParent().resolve(&quot;test/abccopy.txt&quot;);
+        try {
+            System.out.println(Files.size(from));
+            Files.move(from,to,StandardCopyOption.REPLACE_EXISTING);
+        } catch(IOException e) {
+            System.out.println(&quot;移动文件错误&quot;);
+        }
+    }
+
+    //  读取文件属性
+    public static void fileAttributes() {
+        Path path = Paths.get(&quot;D:/file&quot;);
+        System.out.println(Files.isDirectory(path, LinkOption.NOFOLLOW_LINKS));
+        try {
+            BasicFileAttributes attributes = Files.readAttributes(path, BasicFileAttributes.class);
+            System.out.println(attributes.lastModifiedTime().toMillis());
+        }catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void createDirectory() {
+        Path path = Paths.get(&quot;D:/file/test&quot;);
+        try {
+            if(Files.notExists(path)) {
+                Files.createDirectories(path);
+            }
+            // 路径拼接
+            Path path2 = path.resolve(&quot;A.java&quot;);
+            Files.createFile(path2);
+            // 打开目录并挑选后缀为java的文件
+            DirectoryStream&lt;Path&gt; paths = Files.newDirectoryStream(path,&quot;*.{java,txt}&quot;);
+            for(Path p : paths) {
+                System.out.println(p.getFileName());
+            }
+        }catch(IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public static void main(String args[]) {
+        moveFile();
+        fileAttributes();
+        createDirectory();
+    }
+}</code></pre>
+<p>FileVisitor类API:</p>
+<p>walkFileTree 递归访问文件树的每一个文件</p>
+<p>这个API需要一个实现FileVisitor接口的查找类，具体事例:</p>
+<pre><code class="java">import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.FileVisitOption;
+import java.nio.file.FileVisitResult;
+import java.nio.file.FileVisitor;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.PathMatcher;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.EnumSet;
+
+class Search implements FileVisitor{
+
+    private final PathMatcher matcher;
+
+    public Search(String ext) {
+        matcher = FileSystems.getDefault().getPathMatcher(&quot;glob:&quot; + ext);
+    }
+
+    public void JudgeFile(Path file) throws IOException {
+        Path name = file.getFileName();
+        if (name!=null&amp;&amp;matcher.matches(name)) {
+            System.out.println(&quot;找到了&quot;+name);
+        }
+    }
+
+    @Override
+    public FileVisitResult postVisitDirectory(Object arg0, IOException arg1) throws IOException {
+        // TODO Auto-generated method stub
+        return FileVisitResult.CONTINUE;
+    }
+
+    @Override
+    public FileVisitResult preVisitDirectory(Object arg0, BasicFileAttributes arg1) throws IOException {
+
+        return FileVisitResult.CONTINUE;
+    }
+
+    @Override
+    public FileVisitResult visitFile(Object arg0, BasicFileAttributes arg1) throws IOException {
+        // TODO Auto-generated method stub
+        JudgeFile((Path)arg0);
+        return FileVisitResult.CONTINUE;
+    }
+
+    @Override
+    public FileVisitResult visitFileFailed(Object arg0, IOException arg1) throws IOException {
+        // TODO Auto-generated method stub
+        return FileVisitResult.CONTINUE;
+    }
+
+
+}
+public class SearchJAVAFiles {
+    public static void main(String args[]) throws IOException {
+        String ext = &quot;*.java&quot;;
+        Path fileTree = Paths.get(&quot;D:/file&quot;);
+        Search walk = new Search(ext);
+        EnumSet&lt;FileVisitOption&gt; opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
+
+        // 递归查找子文件
+        Files.walkFileTree(fileTree, opts, Integer.MAX_VALUE, walk);
+
+    }
+}</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1102605958@qq.com </span>
@@ -658,12 +797,12 @@ public class TestVisit extends Visit {
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>java的访问控制</p>
+    <p><span class="copy-title">文章标题:</span>java文件整体属性</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Leo">Leo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-02-03, 17:07:54</p>
-    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:38:43</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" title="java的访问控制">http://panxiakai.com/2020/02/03/java%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-03, 17:44:55</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:46:52</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E6%96%87%E4%BB%B6%E6%95%B4%E4%BD%93%E5%B1%9E%E6%80%A7/" title="java文件整体属性">http://panxiakai.com/2020/02/03/java%E6%96%87%E4%BB%B6%E6%95%B4%E4%BD%93%E5%B1%9E%E6%80%A7/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
