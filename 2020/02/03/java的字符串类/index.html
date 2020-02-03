@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World | 岁月静好</title>
+  <title>java的字符串类 | 岁月静好</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hello World | 岁月静好">
+  <meta name="description" content="java的字符串类 | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Package 如果不是放在包下的类不需要进行声明，不然需要在第一行需要声明包名 包名唯一，通常使用域名逆序来设置包名 引入类时必须使用类的完整名字即包名+类名  import import 放在package下面和类定义的上方 可以用*来引用一个目录下的所有类，比如import java lang.*,但是*只包含当前目录下的java文件不包含子文件和子文件夹的java文件，由于使用*可能会带来">
 <meta property="og:type" content="article">
@@ -485,19 +485,29 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java的字符串类" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">java的字符串类</h1>
     
     <div class="article-meta">
         
         
+        
+        <span class="book">
+            
+                <a  data-rel="后端">后端</a>/
+            
+                <a  data-rel="java">java</a>/
+            
+                <a  data-rel="java类库">java类库</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-24 08:48:22'>2020-01-24 08:48</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-03 17:18:40'>2020-02-03 17:18</time>
         
     </div>
     <div class="article-meta">
@@ -519,7 +529,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串类"><span class="toc-text">字符串类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#String类"><span class="toc-text">String类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#StringBuffer和StringBuilder"><span class="toc-text">StringBuffer和StringBuilder</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#length和capacity"><span class="toc-text">length和capacity</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#时间类"><span class="toc-text">时间类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#java-util-Date类"><span class="toc-text">java.util.Date类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#java-sql-Date类"><span class="toc-text">java.sql.Date类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Calendar-类"><span class="toc-text">Calendar 类</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -535,15 +545,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h4 id="字符串类"><a href="#字符串类" class="headerlink" title="字符串类"></a>字符串类</h4><h5 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h5><p>String是不能改变的，改变的你只能是引用，即指针的指向，存放String的内存并不变，所以String的api也不会改变原来的值(比如字符串连接函数str.concat(‘abc’)并不会改变str的值)，只会得到一个有api构造得到的string</p>
+<p>常见方法有: charAt,concat,contains,endsWith,equals,equalsIgnoreCase,hashCode,indexOf,length,matches,replace,replaceAll,split,startWith,subString,trim,valueOf</p>
+<h5 id="StringBuffer和StringBuilder"><a href="#StringBuffer和StringBuilder" class="headerlink" title="StringBuffer和StringBuilder"></a>StringBuffer和StringBuilder</h5><p>这两个都是可变字符串，Buffer同步而Builder不同步，Builder性能更好</p>
+<p>append/insert/delete/replace/substring/timeToSize</p>
+<h6 id="length和capacity"><a href="#length和capacity" class="headerlink" title="length和capacity"></a>length和capacity</h6><p>StringBuffer的capacity和length一般不等，初始的capacity = 16+初始字符串长度，当append后lenth&gt;capacity，capacity会加一乘以二，当得到的新的capacity仍然小于length，那么length会直接赋值给capacitye  </p>
+<h4 id="时间类"><a href="#时间类" class="headerlink" title="时间类"></a>时间类</h4><h5 id="java-util-Date类"><a href="#java-util-Date类" class="headerlink" title="java.util.Date类"></a>java.util.Date类</h5><p>已经弃用，仅保留getTime</p>
+<h5 id="java-sql-Date类"><a href="#java-sql-Date类" class="headerlink" title="java.sql.Date类"></a>java.sql.Date类</h5><p>数据库对应的时间类</p>
+<h5 id="Calendar-类"><a href="#Calendar-类" class="headerlink" title="Calendar 类"></a>Calendar 类</h5><p>最常用,由于该类为抽象类所以需要getInstance方法来获取实例，实例类型其实是GregorianCalendar</p>
+<p><code>Calendar gc = Calendar.getInstance()</code>等价于<code>Calendar gc = new GregorianCalendar()</code></p>
+<h6 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h6><p>get(Field) 获取时间中某个属性值</p>
+<p>getTime() 返回相应的Date对象 </p>
+<p>getTimeInMills() 返回自1970.1.1以来的毫秒数</p>
+<p>set(Field) 设置时间字段</p>
+<p>add(field,amount) 根据指定字段增加/减少时间</p>
+<p>roll(field,amount) 根据指定字段增加/减少时间，但不影响上一级的时间段=</p>
+<pre><code class="java">public class CalendarClassTest {
+
+    Calendar calendar = Calendar.getInstance();
+    public void getField() {
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH)+1;
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int hour = calendar.get(Calendar.HOUR);
+        int minute = calendar.get(Calendar.MINUTE);
+        int second = calendar.get(Calendar.SECOND);
+        // 1代表星期日，2代表星期一
+        int weekday = calendar.get(Calendar.DAY_OF_WEEK);
+        System.out.println(year+&quot;年&quot;+month+&quot;月&quot;+day+&quot;日&quot;+hour+&quot;时&quot;+minute+&quot;分&quot;+second+&quot;秒&quot;+&quot;星期&quot;+weekday);
+
+    }
+
+    public void operatorCalendar() {
+        calendar.add(Calendar.YEAR, 1);
+        getField();
+    }
+
+    public void getlastDay(int month) {
+        calendar.set(Calendar.MONTH,month);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        //Date与DAY_OF_MONTH一样
+        calendar.add(Calendar.DATE, -1);
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+    }
+
+    public void setTime() {
+        calendar.set(2018, 4, 5);
+        getField();
+    }
+    public static void main(String args[]) {
+        CalendarClassTest calendarClassTest = new CalendarClassTest();
+        //calendarClassTest.getField();
+        //calendarClassTest.getlastDay(6);
+        //calendarClassTest.getlastDay(6);
+        calendarClassTest.setTime();
+    }
+
+}</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -557,12 +615,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>java的字符串类</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Leo">Leo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-24, 08:48:22</p>
-    <p><span class="copy-title">最后更新:</span>2020-01-24, 08:48:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/24/hello-world/" title="Hello World">http://panxiakai.com/2020/01/24/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-03, 17:18:14</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:18:40</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB/" title="java的字符串类">http://panxiakai.com/2020/02/03/java%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

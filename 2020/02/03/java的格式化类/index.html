@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World | 岁月静好</title>
+  <title>java的格式化类 | 岁月静好</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hello World | 岁月静好">
+  <meta name="description" content="java的格式化类 | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Package 如果不是放在包下的类不需要进行声明，不然需要在第一行需要声明包名 包名唯一，通常使用域名逆序来设置包名 引入类时必须使用类的完整名字即包名+类名  import import 放在package下面和类定义的上方 可以用*来引用一个目录下的所有类，比如import java lang.*,但是*只包含当前目录下的java文件不包含子文件和子文件夹的java文件，由于使用*可能会带来">
 <meta property="og:type" content="article">
@@ -485,19 +485,29 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java的格式化类" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">java的格式化类</h1>
     
     <div class="article-meta">
         
         
+        
+        <span class="book">
+            
+                <a  data-rel="后端">后端</a>/
+            
+                <a  data-rel="java">java</a>/
+            
+                <a  data-rel="java类库">java类库</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-24 08:48:22'>2020-01-24 08:48</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-03 17:20:24'>2020-02-03 17:19</time>
         
     </div>
     <div class="article-meta">
@@ -519,7 +529,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#格式化类"><span class="toc-text">格式化类</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -535,15 +545,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h4 id="格式化类"><a href="#格式化类" class="headerlink" title="格式化类"></a>格式化类</h4><ul>
+<li><p>java.text包下的text.Format子类</p>
+<ul>
+<li>NumberFormat: 数字格式化</li>
+<li>DecimalFormat</li>
+</ul>
+<pre><code class="java">DecimalFormat df1,df2;
+        // #表示可以不存在，0即使是没有也要补0
+        df1 = new DecimalFormat(&quot;#.00&quot;);
+        df2 = new DecimalFormat(&quot;0.00&quot;);
+        System.out.println(df1.format(0.1));
+        System.out.println(df2.format(0.1));
+        // ##会保留有效值，而00则会保留即便位数是0
+        df1 = new DecimalFormat(&quot;0.##&quot;);
+        df2 = new DecimalFormat(&quot;0.00&quot;);
+        System.out.println(df1.format(0.1));
+        System.out.println(df1.format(0.123));
+        System.out.println(df2.format(0.1));    </code></pre>
+<p>​    </p>
+</li>
+</ul>
+<ul>
+<li>MessageFormat 字符串格式化</li>
+</ul>
+<pre><code class="java">      //  会将数组按照下标填入模板字符串
+      String messageString = &quot;{0}{1}{2}&quot;;
+      Object[] array = new Object[] {&#39;A&#39;,&#39;B&#39;,&#39;C&#39;};
+      String valueString = MessageFormat.format(messageString, array);
+      System.out.println(valueString);</code></pre>
+<p>  ​        </p>
+<ul>
+<li><p>DateFormat 日期、时间格式化</p>
+<ul>
+<li>SimpleDateFormat</li>
+</ul>
+<pre><code class="java">String strDateString= &quot;2018-10-19 10:11:30.345&quot;;
+        String pat1 = &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;;
+        String pat2 = &quot;YYYY年MM月dd年 HH时mm分ss秒&quot;;
+        //  用来解析
+        SimpleDateFormat sdf1 = new SimpleDateFormat(pat1);
+        // 用来输出
+        SimpleDateFormat sd2 = new SimpleDateFormat(pat2);
+        Date d =null;
+        try {
+            d= sdf1.parse(strDateString);
+            System.out.println(sd2.format(d));
+
+        }catch(Exception e) {
+            e.printStackTrace();
+        }</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>java.time.format包下</p>
+<ul>
+<li>DateTimeFormatter</li>
+</ul>
+<pre><code class="java">String dateString = &quot;2016年10月25日&quot;;
+        DateTimeFormatter dateforDateTimeFormatter = DateTimeFormatter.ofPattern(&quot;yyyy年MM月dd日&quot;);
+        LocalDate dataDate = LocalDate.parse(dateString,dateforDateTimeFormatter);
+        System.out.println(dataDate);
+
+        LocalDateTime localDate =LocalDateTime.now();
+        DateTimeFormatter formatter =DateTimeFormatter.ofPattern(&quot;yyyy年MM月dd日  hh:mm:ss&quot;);
+        String dString = localDate.format(formatter);
+        System.out.println(dString);</code></pre>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -557,12 +626,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>java的格式化类</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Leo">Leo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-24, 08:48:22</p>
-    <p><span class="copy-title">最后更新:</span>2020-01-24, 08:48:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/24/hello-world/" title="Hello World">http://panxiakai.com/2020/01/24/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-03, 17:19:53</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:20:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%B1%BB/" title="java的格式化类">http://panxiakai.com/2020/02/03/java%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%B1%BB/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

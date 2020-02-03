@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World | 岁月静好</title>
+  <title>java中的面向对象 | 岁月静好</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hello World | 岁月静好">
+  <meta name="description" content="java中的面向对象 | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Package 如果不是放在包下的类不需要进行声明，不然需要在第一行需要声明包名 包名唯一，通常使用域名逆序来设置包名 引入类时必须使用类的完整名字即包名+类名  import import 放在package下面和类定义的上方 可以用*来引用一个目录下的所有类，比如import java lang.*,但是*只包含当前目录下的java文件不包含子文件和子文件夹的java文件，由于使用*可能会带来">
 <meta property="og:type" content="article">
@@ -485,19 +485,27 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java中的面向对象" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">java中的面向对象</h1>
     
     <div class="article-meta">
         
         
+        
+        <span class="book">
+            
+                <a  data-rel="后端">后端</a>/
+            
+                <a  data-rel="java">java</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-24 08:48:22'>2020-01-24 08:48</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-03 17:01:42'>2020-02-03 16:59</time>
         
     </div>
     <div class="article-meta">
@@ -519,7 +527,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类"><span class="toc-text">抽象类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口与抽象类异同点"><span class="toc-text">接口与抽象类异同点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#相同点"><span class="toc-text">相同点</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -535,15 +543,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承可以很好的提取类定义中的共有部分</p>
+<ul>
+<li>子类继承父类的所有属性和方法，但不能直接访问private成员，子类会继承父类所有方法，可以直接使用</li>
+<li>子类也会继承父类的父类的所有属性和方法但同样无法直接访问private成员</li>
+<li>java的继承是单继承，所有类都默认继承Object类所以所有类都默认有clone,equals,finalize,getClass,hashCode,toString等方法</li>
+<li>子类的构造函数会默认调用父类的构造函数即super(),如果你在构造函数的第一句声明super，那么默认就不会加入super(),自己写的super()可以加入形参来调用父类有参构造器</li>
+</ul>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><ul>
+<li><p>一个完整的类的方法必须全部实现，而抽象类则只实现了部分或者都没实现，由于<strong>抽象类没有实现所有的方法所以也就无法实例化</strong>，也就无法被new出来</p>
+</li>
+<li><p>子类可以继承抽象类由于单继承的关系子类就不能继承其他类了，并且<strong>子类必须实现抽象类所有未实现的方法不然子类也是一个抽象类</strong></p>
+</li>
+</ul>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><ul>
+<li>如果抽象类是能够实现某些方法，那么接口是的方法全都是没有实现的</li>
+<li>接口是一个特殊类，一个类可以实现多个接口</li>
+<li>接口也可以相互继承，没有实现的方法会进行叠加</li>
+<li>类实现接口如果没有实现他的所有方法则会成为抽象类</li>
+<li>接口可以定义变量但一般是常量</li>
+</ul>
+<h3 id="接口与抽象类异同点"><a href="#接口与抽象类异同点" class="headerlink" title="接口与抽象类异同点"></a>接口与抽象类异同点</h3><h4 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h4><ul>
+<li>无法实例化</li>
+</ul>
+<p>不同点</p>
+<ul>
+<li>关键字一个是abstract,一个是interface</li>
+<li>抽象类可以有构造函数接口则没有</li>
+<li>抽象类的方法可以有实现，接口则不能有实现</li>
+<li>抽象类方法可以有main也可以运行，接口不能</li>
+<li>抽象类的方法可以有private/protected,接口都是public</li>
+<li>接口可以继承多个接口，一个类能实现多个接口，但只能继承一个类</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -557,12 +588,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>java中的面向对象</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Leo">Leo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-24, 08:48:22</p>
-    <p><span class="copy-title">最后更新:</span>2020-01-24, 08:48:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/24/hello-world/" title="Hello World">http://panxiakai.com/2020/01/24/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-03, 16:59:48</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:01:42</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E4%B8%AD%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="java中的面向对象">http://panxiakai.com/2020/02/03/java%E4%B8%AD%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

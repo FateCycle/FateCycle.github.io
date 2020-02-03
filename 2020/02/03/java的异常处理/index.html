@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World | 岁月静好</title>
+  <title>java的异常处理 | 岁月静好</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hello World | 岁月静好">
+  <meta name="description" content="java的异常处理 | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Package 如果不是放在包下的类不需要进行声明，不然需要在第一行需要声明包名 包名唯一，通常使用域名逆序来设置包名 引入类时必须使用类的完整名字即包名+类名  import import 放在package下面和类定义的上方 可以用*来引用一个目录下的所有类，比如import java lang.*,但是*只包含当前目录下的java文件不包含子文件和子文件夹的java文件，由于使用*可能会带来">
 <meta property="og:type" content="article">
@@ -485,19 +485,27 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java的异常处理" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">java的异常处理</h1>
     
     <div class="article-meta">
         
         
+        
+        <span class="book">
+            
+                <a  data-rel="后端">后端</a>/
+            
+                <a  data-rel="java">java</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-24 08:48:22'>2020-01-24 08:48</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-03 17:42:30'>2020-02-03 17:21</time>
         
     </div>
     <div class="article-meta">
@@ -519,7 +527,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-text">异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#异常分类"><span class="toc-text">异常分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异常类"><span class="toc-text">异常类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异常处理-1"><span class="toc-text">异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#try-catch-finally"><span class="toc-text">try-catch-finally</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#throws"><span class="toc-text">throws</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义异常"><span class="toc-text">自定义异常</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -535,15 +543,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><h4 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h4><p>异常:程序不正常的行为或者状态，例如:</p>
+<ol>
+<li>int a = 5/0</li>
+<li>数组越界访问</li>
+<li>读取文件，结果文件不存在</li>
+</ol>
+<p>异常处理:</p>
+<pre><code>    1. 让程序返回安全状态
+      2. 允许用于保存结果，并以适当方式关闭程序</code></pre><h4 id="异常类"><a href="#异常类" class="headerlink" title="异常类"></a>异常类</h4><p>Throwable:所有错误的祖先</p>
+<p>Error:系统内部错误或者资源耗尽，不需要程序员解决</p>
+<p>Exception:程序有关的异常</p>
+<ol>
+<li>RuntimeException:程序自身的错误，例如:5/0,空指针，数组越界</li>
+<li>非RuntimeException:外界相关错误，打开一个不存在的文件，加载一个不存在的类</li>
+</ol>
+<p>Unchecked Exception: <strong>这种异常编译器在编译的时候是无法查出来的，需要程序员自己解决</strong>，包括了Error的子类和RuntimeException子类，其中Error是不需要程序员解决的</p>
+<p>checked Exception:<strong>这种异常编译器会检查并在运行前就标记错误</strong>，包括非RuntimeException的子类</p>
+<h4 id="异常处理-1"><a href="#异常处理-1" class="headerlink" title="异常处理"></a>异常处理</h4><h5 id="try-catch-finally"><a href="#try-catch-finally" class="headerlink" title="try-catch-finally"></a>try-catch-finally</h5><p>包含 try…catch(catch可以有多个),try…catch..finally,try…finally等三种结构，即try必须有，catch和finally至少有一个，具体含义：</p>
+<ul>
+<li>try:正常的代码逻辑</li>
+<li>catch: 当try发生异常，将执行catch代码，若没有则不执行，catch可以有多个，而异常只有和某个catch匹配才会执行它内部的代码(异常类型都不匹配则跳过执行finally)，而且一个异常只能进入一个catch块，进入执行完catch将不会再返回try发生异常的位置，直接执行finally,一般将小异常放在前面的catch，搭异常放在后面的catch</li>
+<li>finally:无论发不发生异常都会执行，没有异常在try后执行，有异常在catch后执行</li>
+</ul>
+<h5 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h5><p>对于在当前类不进行解决的异常可以使用throws进行抛出，调用有异常抛出的方法要么使用try..catch进行处理要么就继续向上级抛异常直到main函数为止,throws是写在方法后面的,throw是抛出某个异常</p>
+<p>注意事项:子类重写父类有异常抛出的方法必须抛出相同的异常或者该异常的子类</p>
+<h4 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h4><ul>
+<li><p>继承类</p>
+<ul>
+<li>继承Exception，为Checked Exception</li>
+<li>继承RuntimeException，就变成Unchecked Exception</li>
+</ul>
+</li>
+<li><p>构造函数</p>
+<p>调用父类构造器如super()或者super(message)，剩下成员属性随意设置</p>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -557,12 +592,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>java的异常处理</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Leo">Leo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-24, 08:48:22</p>
-    <p><span class="copy-title">最后更新:</span>2020-01-24, 08:48:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/24/hello-world/" title="Hello World">http://panxiakai.com/2020/01/24/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-03, 17:21:11</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:42:30</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="java的异常处理">http://panxiakai.com/2020/02/03/java%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World | 岁月静好</title>
+  <title>java的数字类 | 岁月静好</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hello World | 岁月静好">
+  <meta name="description" content="java的数字类 | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Package 如果不是放在包下的类不需要进行声明，不然需要在第一行需要声明包名 包名唯一，通常使用域名逆序来设置包名 引入类时必须使用类的完整名字即包名+类名  import import 放在package下面和类定义的上方 可以用*来引用一个目录下的所有类，比如import java lang.*,但是*只包含当前目录下的java文件不包含子文件和子文件夹的java文件，由于使用*可能会带来">
 <meta property="og:type" content="article">
@@ -485,19 +485,29 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java的数字类" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">java的数字类</h1>
     
     <div class="article-meta">
         
         
+        
+        <span class="book">
+            
+                <a  data-rel="后端">后端</a>/
+            
+                <a  data-rel="java">java</a>/
+            
+                <a  data-rel="java类库">java类库</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-24 08:48:22'>2020-01-24 08:48</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-03 17:17:18'>2020-02-03 17:16</time>
         
     </div>
     <div class="article-meta">
@@ -519,7 +529,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#数字类-java-math"><span class="toc-text">数字类(java.math)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#大数类"><span class="toc-text">大数类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#随机数类"><span class="toc-text">随机数类</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -535,15 +545,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h4 id="数字类-java-math"><a href="#数字类-java-math" class="headerlink" title="数字类(java.math)"></a>数字类(java.math)</h4><p>数字分为整数(Short,Int,Long)，浮点数(Float,Double)，大数类(BigInteger,BigDecimal)，随机数类(Random),工具类(Math)</p>
+<h5 id="大数类"><a href="#大数类" class="headerlink" title="大数类"></a>大数类</h5><ul>
+<li><p>BigInteger 大整数类</p>
+<p>add,substract,multiply,divide,max,min,divideAndRemainder</p>
+</li>
+<li><p>BigDecimal(尽量使用字符串实例化，传入浮点数产生的BigDecimal有误差) 大浮点数类</p>
+<p>add,substract,multiply,divide,max,min,divideAndRemainder</p>
+</li>
+</ul>
+<h5 id="随机数类"><a href="#随机数类" class="headerlink" title="随机数类"></a>随机数类</h5><ul>
+<li><p>Radom随机数</p>
+<p>nextInt()  返回一个随机Int</p>
+<p>nextInt(int a) 返回一个[0,a)的随机int</p>
+<p>nextDouble() 返回一个[0,1.0)的double</p>
+<p>ints(取几个随机数,开始值,结束值)返回随机数数组</p>
+<pre><code class="java">Random rd = new Random();
+// 默认返回10个随机数
+int[] arr = rd.ints().limit(5).toArray();</code></pre>
+</li>
+</ul>
+<ul>
+<li>Math.random() 返回[0.0,1.0)之间的double</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -557,12 +581,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>java的数字类</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Leo">Leo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-24, 08:48:22</p>
-    <p><span class="copy-title">最后更新:</span>2020-01-24, 08:48:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/24/hello-world/" title="Hello World">http://panxiakai.com/2020/01/24/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-03, 17:16:40</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:17:18</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E7%9A%84%E6%95%B0%E5%AD%97%E7%B1%BB/" title="java的数字类">http://panxiakai.com/2020/02/03/java%E7%9A%84%E6%95%B0%E5%AD%97%E7%B1%BB/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="java基础知识 | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="java基本类型 boolean: java的布尔类型只能是true或者false byte: 1个字节即8位，取值范围[-128,127) short:2个字节,取值范围[-2^15,2^15-1) int:4个字节 long: 8个字节,long赋值的时候要在末尾加上L float:4个字节,末尾加上f double: 8个字节,末尾加上d(可以省略) char: 8个字节  java方法ja">
+<meta name="description" content="Package 如果不是放在包下的类不需要进行声明，不然需要在第一行需要声明包名 包名唯一，通常使用域名逆序来设置包名 引入类时必须使用类的完整名字即包名+类名  import import 放在package下面和类定义的上方 可以用*来引用一个目录下的所有类，比如import java lang.*,但是*只包含当前目录下的java文件不包含子文件和子文件夹的java文件，由于使用*可能会带来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java基础知识">
-<meta property="og:url" content="http://panxiakai.com/2020/01/28/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:title" content="java的import">
+<meta property="og:url" content="http://panxiakai.com/2020/02/03/java%E7%9A%84import/index.html">
 <meta property="og:site_name" content="岁月静好">
-<meta property="og:description" content="java基本类型 boolean: java的布尔类型只能是true或者false byte: 1个字节即8位，取值范围[-128,127) short:2个字节,取值范围[-2^15,2^15-1) int:4个字节 long: 8个字节,long赋值的时候要在末尾加上L float:4个字节,末尾加上f double: 8个字节,末尾加上d(可以省略) char: 8个字节  java方法ja">
+<meta property="og:description" content="Package 如果不是放在包下的类不需要进行声明，不然需要在第一行需要声明包名 包名唯一，通常使用域名逆序来设置包名 引入类时必须使用类的完整名字即包名+类名  import import 放在package下面和类定义的上方 可以用*来引用一个目录下的所有类，比如import java lang.*,但是*只包含当前目录下的java文件不包含子文件和子文件夹的java文件，由于使用*可能会带来">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-28T10:08:21.000Z">
-<meta property="article:modified_time" content="2020-01-28T10:09:47.089Z">
+<meta property="article:published_time" content="2020-02-03T09:36:57.000Z">
+<meta property="article:modified_time" content="2020-02-03T09:37:38.116Z">
 <meta property="article:author" content="Leo">
 <meta name="twitter:card" content="summary">
 
@@ -205,21 +205,57 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(3)</small></div></li>
+    <li><div class="all active">全部文章<small>(20)</small></div></li>
     
         
             
-            <li><div data-rel="后端"><i class="fold iconfont icon-right"></i>后端<small>(2)</small></div>
+            <li><div data-rel="后端"><i class="fold iconfont icon-right"></i>后端<small>(19)</small></div>
                 
                     <ul class="sub hide">
                         
-                        <li><div data-rel="java">java<small>(2)</small></div>
+                        <li><div data-rel="java"><i class="fold iconfont icon-right"></i>java<small>(19)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="关键字">关键字<small>(3)</small></div>
+                                    </li>
+                                    
+                                    <li><div data-rel="java类库">java类库<small>(4)</small></div>
+                                    </li>
+                                    
+                                    <li><div data-rel="jar包">jar包<small>(1)</small></div>
+                                    </li>
+                                    
+                                    <li><div data-rel="数据结构"><i class="fold iconfont icon-right"></i>数据结构<small>(5)</small></div>
+                                    </li>
+                                    
+                                </ul>
                             
                         </li>
                             
                     </ul>
                 
             </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
             
         
     
@@ -237,7 +273,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="3">
+<input type="hidden" id="yelog_site_posts_number" value="20">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -277,14 +313,6 @@
     
     <nav id="title-list-nav">
         
-        <a  class="后端 java "
-           href="/2020/01/28/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="java基础知识">java基础知识</span>
-            <span class="post-date" title="2020-01-28 18:08:21">2020/01/28</span>
-        </a>
-        
         <a  class=""
            href="/2020/01/24/hello-world/"
            data-tag=""
@@ -293,12 +321,156 @@
             <span class="post-date" title="2020-01-24 08:48:22">2020/01/24</span>
         </a>
         
+        <a  class="后端 java jar包 "
+           href="/2020/02/03/jar%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jar包">jar包</span>
+            <span class="post-date" title="2020-02-03 17:05:12">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java "
+           href="/2020/02/03/java%E4%B8%AD%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java中的面向对象">java中的面向对象</span>
+            <span class="post-date" title="2020-02-03 16:59:48">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java "
+           href="/2020/01/28/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java基础知识">java基础知识</span>
+            <span class="post-date" title="2020-01-28 18:08:21">2020/01/28</span>
+        </a>
+        
         <a  class="后端 java "
            href="/2020/01/24/java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="java环境搭建">java环境搭建</span>
             <span class="post-date" title="2020-01-24 16:23:26">2020/01/24</span>
+        </a>
+        
+        <a  class="后端 java 数据结构 JCF "
+           href="/2020/02/03/java%E7%9A%84List/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的List">java的List</span>
+            <span class="post-date" title="2020-02-03 17:25:13">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java 数据结构 JCF "
+           href="/2020/02/03/java%E7%9A%84Map/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的Map">java的Map</span>
+            <span class="post-date" title="2020-02-03 17:31:55">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java 数据结构 JCF "
+           href="/2020/02/03/java%E7%9A%84Set/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的Set">java的Set</span>
+            <span class="post-date" title="2020-02-03 17:31:10">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java 关键字 "
+           href="/2020/02/03/java%E7%9A%84final/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的final">java的final</span>
+            <span class="post-date" title="2020-02-03 17:36:05">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java 关键字 "
+           href="/2020/02/03/java%E7%9A%84import/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的import">java的import</span>
+            <span class="post-date" title="2020-02-03 17:36:57">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java 关键字 "
+           href="/2020/02/03/java%E7%9A%84static/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的static">java的static</span>
+            <span class="post-date" title="2020-02-03 17:34:28">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java "
+           href="/2020/02/03/java%E7%9A%84%E5%A4%9A%E6%80%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的多态">java的多态</span>
+            <span class="post-date" title="2020-02-03 17:01:55">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java java类库 "
+           href="/2020/02/03/java%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的字符串类">java的字符串类</span>
+            <span class="post-date" title="2020-02-03 17:18:14">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java 数据结构 JCF "
+           href="/2020/02/03/java%E7%9A%84%E5%B7%A5%E5%85%B7%E7%B1%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的工具类">java的工具类</span>
+            <span class="post-date" title="2020-02-03 17:32:37">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java "
+           href="/2020/02/03/java%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的异常处理">java的异常处理</span>
+            <span class="post-date" title="2020-02-03 17:21:11">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java java类库 "
+           href="/2020/02/03/java%E7%9A%84%E6%95%B0%E5%AD%97%E7%B1%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的数字类">java的数字类</span>
+            <span class="post-date" title="2020-02-03 17:16:40">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java 数据结构 "
+           href="/2020/02/03/java%E7%9A%84%E6%95%B0%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的数组">java的数组</span>
+            <span class="post-date" title="2020-02-03 17:23:20">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java java类库 "
+           href="/2020/02/03/java%E7%9A%84%E6%97%B6%E9%97%B4%E7%B1%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的时间类">java的时间类</span>
+            <span class="post-date" title="2020-02-03 17:19:05">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java java类库 "
+           href="/2020/02/03/java%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%B1%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的格式化类">java的格式化类</span>
+            <span class="post-date" title="2020-02-03 17:19:53">2020/02/03</span>
+        </a>
+        
+        <a  class="后端 java "
+           href="/2020/02/03/java%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的访问控制">java的访问控制</span>
+            <span class="post-date" title="2020-02-03 17:07:54">2020/02/03</span>
         </a>
         
     </nav>

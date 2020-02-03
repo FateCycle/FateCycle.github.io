@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World | 岁月静好</title>
+  <title>java的Map | 岁月静好</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hello World | 岁月静好">
+  <meta name="description" content="java的Map | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Package 如果不是放在包下的类不需要进行声明，不然需要在第一行需要声明包名 包名唯一，通常使用域名逆序来设置包名 引入类时必须使用类的完整名字即包名+类名  import import 放在package下面和类定义的上方 可以用*来引用一个目录下的所有类，比如import java lang.*,但是*只包含当前目录下的java文件不包含子文件和子文件夹的java文件，由于使用*可能会带来">
 <meta property="og:type" content="article">
@@ -485,19 +485,31 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java的Map" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">java的Map</h1>
     
     <div class="article-meta">
         
         
+        
+        <span class="book">
+            
+                <a  data-rel="后端">后端</a>/
+            
+                <a  data-rel="java">java</a>/
+            
+                <a  data-rel="数据结构">数据结构</a>/
+            
+                <a  data-rel="JCF">JCF</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-24 08:48:22'>2020-01-24 08:48</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-03 17:40:36'>2020-02-03 17:31</time>
         
     </div>
     <div class="article-meta">
@@ -519,7 +531,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Map"><span class="toc-text">Map</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -535,15 +547,117 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h5 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h5><p>Hashtable 同步，慢，数据量小</p>
+<p>HashMap 不同步，快，数据量大，不会排序</p>
+<p>LinkedHashMap 按照插入的先后排序</p>
+<p>TreMap 按照key的自然排序或者compareTo 方法进行排序</p>
+<p>Properties 同步，文件形式，数据量小</p>
+<p>Hashtable主要的api:</p>
+<ul>
+<li><p>clear  清空</p>
+</li>
+<li><p>contains 等价于containsValue </p>
+</li>
+<li><p>containsValue 是否包含某个值</p>
+</li>
+<li><p>containsKey 是否包含某个值</p>
+</li>
+<li><p>get  获取特定键的值</p>
+</li>
+<li><p>put  放入键值对</p>
+</li>
+<li><p>remove  通过键移除键值对</p>
+</li>
+<li><p>size  得到元素个数</p>
+</li>
+</ul>
+<p>Properties 除了以上的方法还有</p>
+<ul>
+<li>store</li>
+<li>load</li>
+<li>getProperty</li>
+<li>setProperty</li>
+</ul>
+<p>下面为Map的一些示例代码</p>
+<pre><code class="java">
+public class HashMapTest {
+    public static void main(String args[]) {
+        Hashtable&lt;Integer,String&gt; ht = new Hashtable&lt;Integer,String&gt;();
+        ht.put(1, &quot;haha&quot;);
+        ht.put(2, &quot;heihei&quot;);
+        ht.put(1, &quot;UUU&quot;);
+        Iterator&lt;Entry&lt;Integer,String&gt;&gt; ite = ht.entrySet().iterator();
+        while(ite.hasNext()) {
+            Map.Entry&lt;Integer,String&gt; entry = ite.next();
+            System.out.println(entry.getKey()+&quot;--&gt;&quot;+entry.getValue());
+        }
+
+        Iterator&lt;Integer&gt; ite1 = ht.keySet().iterator();
+        while(ite1.hasNext()) {
+            Integer key = ite1.next();
+            System.out.println(key+&quot;--&gt;&quot;+ht.get(key));
+        }
+        // Hashtable专属，HashMap，LinkedHashMap都不能使用
+        Enumeration&lt;Integer&gt; keys = ht.keys();
+        while(keys.hasMoreElements()) {
+            Integer key = keys.nextElement();
+            System.out.println(key+&quot;--&gt;&quot;+ht.get(key));
+        }
+    }
+
+}
+</code></pre>
+<pre><code class="java">//properties文件示例
+public class PropertiesTest {
+
+    public static String GetValueByKey(String filePath,String key) {
+        Properties pps = new Properties();
+        try {
+            InputStream in = new BufferedInputStream(new FileInputStream(filePath));
+            pps.load(in);
+            String value = pps.getProperty(key);
+            return value;
+        }catch(IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void GetAllProperties(String filePath) throws IOException {
+        Properties pps = new Properties();
+        InputStream in = new BufferedInputStream(new FileInputStream(filePath));
+        pps.load(in);
+        Enumeration&lt;?&gt; en = pps.propertyNames();
+        while (en.hasMoreElements()) {
+            String strKey = (String) en.nextElement();
+            String strValue = pps.getProperty(strKey);
+        }
+    }
+
+    public static void WriteProperties(String filePath,String pkey,String pvalue) throws IOException{
+        File file = new File(filePath);
+        if(!file.exists()) {
+            file.createNewFile();
+        }
+
+        Properties pps = new Properties();
+        InputStream in  = new FileInputStream(filePath);
+        pps.load(in);
+        OutputStream out =new FileOutputStream(filePath);
+        pps.setProperty(pkey, pvalue);
+        pps.store(out, &quot;Update&quot; + pkey + &quot;name&quot;);
+        out.close();
+    }
+
+    public static void main(String[] args) throws IOException {
+        WriteProperties(&quot;Test.properties&quot;,&quot;name&quot;,&quot;12345&quot;);
+        GetAllProperties(&quot;Test.properties&quot;);
+        String value = GetValueByKey(&quot;Test.properties&quot;,&quot;name&quot;);
+        System.out.println(&quot;name:&quot;+value);
+
+    }
+
+}</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -557,12 +671,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>java的Map</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Leo">Leo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-24, 08:48:22</p>
-    <p><span class="copy-title">最后更新:</span>2020-01-24, 08:48:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/24/hello-world/" title="Hello World">http://panxiakai.com/2020/01/24/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-03, 17:31:55</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:40:36</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E7%9A%84Map/" title="java的Map">http://panxiakai.com/2020/02/03/java%E7%9A%84Map/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
