@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>java的访问控制 | 岁月静好</title>
+  <title>java的构建工具maven | 岁月静好</title>
   <meta name="keywords" content="">
-  <meta name="description" content="java的访问控制 | 岁月静好">
+  <meta name="description" content="java的构建工具maven | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="JunitJunit可以针对类中的方法直接让他执行，而不依赖于main函数，即run as -&gt; junit test 即可获得结果，红色进度条代表失败绿色进度条代表成功，如果想对所有测试方法进行测试那么可以使用maven test这样就不用一个个去run as -&gt; junit test了 public class Triangle {     public boolean judg">
 <meta property="og:type" content="article">
@@ -570,9 +570,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-java的访问控制" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java的构建工具maven" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">java的访问控制</h1>
+        <h1 class="article-title">java的构建工具maven</h1>
     
     <div class="article-meta">
         
@@ -582,7 +582,9 @@
             
                 <a  data-rel="后端">后端</a>/
             
-                <a  data-rel="java">java</a>
+                <a  data-rel="java">java</a>/
+            
+                <a  data-rel="maven">maven</a>
             
         </span>
         
@@ -590,7 +592,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-03 17:38:43'>2020-02-03 17:07</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-23 23:38:43'>2020-02-23 23:25</time>
         
     </div>
     <div class="article-meta">
@@ -612,7 +614,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#访问控制"><span class="toc-text">访问控制</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MAVEN构建工具"><span class="toc-text">MAVEN构建工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#传统方法和Maven"><span class="toc-text">传统方法和Maven</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装maven"><span class="toc-text">安装maven</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#POM文件格式"><span class="toc-text">POM文件格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仓库"><span class="toc-text">仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目目录结构"><span class="toc-text">项目目录结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven构建生命周期"><span class="toc-text">Maven构建生命周期</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -628,61 +630,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h3><p>java的访问控制有四种</p>
-<ul>
-<li>private 私有的，只有本类才能访问</li>
-<li>default 默认,由于default不是关键字，所以通常不写，只有在同一个包下才能访问</li>
-<li>protected 同一个包或者子类均可访问</li>
-<li>public 公开，所有类均能访问</li>
+        <h3 id="MAVEN构建工具"><a href="#MAVEN构建工具" class="headerlink" title="MAVEN构建工具"></a>MAVEN构建工具</h3><h4 id="传统方法和Maven"><a href="#传统方法和Maven" class="headerlink" title="传统方法和Maven"></a>传统方法和Maven</h4><p>传统方法添加jar必须挨个添加并且还需要搜索确定版本，并且代码移植需要重新配置jar包路径非常繁琐</p>
+<p>MAVEN可以自动帮程序员甄别和下载第三方库,完成项目编译和单元测试和项目的打包(jar和war格式)</p>
+<h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ol>
+<li>直接创建maven项目或者创建java项目在选择configure-&gt;convert to maven Project，填写组织名(groupId),项目名(artifactID),Name(别名)，description(描述)</li>
+<li>在中央仓库(mvnrepository.com)搜索需要的包</li>
+<li>将依赖放入pm.xml</li>
+<li>邮件运行MAVEN BUILD命令,这里第一次执行需要GoalID可以填写compil或者clean package</li>
+<li>右击项目选择Run as -&gt; java Application</li>
+</ol>
+<h4 id="安装maven"><a href="#安装maven" class="headerlink" title="安装maven"></a>安装maven</h4><p>eclipse可以进行maven插件安装，具体是Help-&gt;Install New Software,在work with中输入maven,打钩软件一路next即可，当然你也可以自己下载maven插件然后再window-&gt;preferences-&gt;maven的installation中配置maven根目录，在User Settings里配置setting.xml和local repository</p>
+<h4 id="POM文件格式"><a href="#POM文件格式" class="headerlink" title="POM文件格式"></a>POM文件格式</h4><ul>
+<li>包含了项目信息,依赖信息,构建信息</li>
+<li>构建信息<ul>
+<li>groupId 组织</li>
+<li>artifactId 项目名</li>
+<li>version 版本</li>
 </ul>
-<p>上述四种均能修饰成员变量，成员方法，构造函数，但是只有default和public可以修饰类</p>
-<p>类内部访问就是直接调用变量，外部访问分两种，作为子类可以直接调用父类的变量，或者要在另一个包的类定义进行实例化类，在调用它的属性或者方法</p>
-<pre><code class="java">//  Visit
-package XXX;
-
-public class Visit {
-    private int v1;
-    int v2;
-    protected int v3;
-    public int v4;
-    private void show1() {
-        System.out.print(v1);
-    }
-
-    void show2() {
-        System.out.print(v2);
-    }
-
-    protected void show3() {
-        System.out.print(v3);
-    }
-
-    protected void show4() {
-        System.out.println(v4);
-    }
-
-}
-
-
-
-// YYY包下的TestVisit 
-package YYY;
-
-import XXX.Visit;
-
-public class TestVisit extends Visit {
-    void show() {
-        // 以子类方式调用，v2需要同包，v1私有
-        System.out.println(v3);
-        System.out.println(v4);
-        // 以对象调用，由于不同包，这个v是Visit也不是子类所以v3,v2均不能访问，v1私有
-        // 天然无法访问，所以只能访问v4
-        Visit v = new Visit();
-        System.out.println(v.v4);
-    }
-
-}
-</code></pre>
+</li>
+</ul>
+<h4 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h4><ul>
+<li>本地仓库</li>
+<li>远程仓库(中央仓库，阿里云仓库等)</li>
+</ul>
+<h4 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h4><ul>
+<li><p>main</p>
+<ul>
+<li>main<ul>
+<li>java  存放java文件</li>
+<li>resources 存放程序资源文件</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>test<ul>
+<li>java 存放测试程序</li>
+<li>resources 存放测试程序资源文件夹</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>pom.xml</p>
+</li>
+</ul>
+<h4 id="Maven构建生命周期"><a href="#Maven构建生命周期" class="headerlink" title="Maven构建生命周期"></a>Maven构建生命周期</h4><ul>
+<li>清理</li>
+<li>编译</li>
+<li>测试</li>
+<li>打包</li>
+<li>安装</li>
+<li>部署</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1102605958@qq.com </span>
@@ -696,12 +694,12 @@ public class TestVisit extends Visit {
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>java的访问控制</p>
+    <p><span class="copy-title">文章标题:</span>java的构建工具maven</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Leo">Leo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-02-03, 17:07:54</p>
-    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:38:43</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" title="java的访问控制">http://panxiakai.com/2020/02/03/java%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-23, 23:25:31</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-23, 23:38:43</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/23/java%E7%9A%84%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7maven/" title="java的构建工具maven">http://panxiakai.com/2020/02/23/java%E7%9A%84%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7maven/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>java的访问控制 | 岁月静好</title>
+  <title>java的单元测试Junit | 岁月静好</title>
   <meta name="keywords" content="">
-  <meta name="description" content="java的访问控制 | 岁月静好">
+  <meta name="description" content="java的单元测试Junit | 岁月静好">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="JunitJunit可以针对类中的方法直接让他执行，而不依赖于main函数，即run as -&gt; junit test 即可获得结果，红色进度条代表失败绿色进度条代表成功，如果想对所有测试方法进行测试那么可以使用maven test这样就不用一个个去run as -&gt; junit test了 public class Triangle {     public boolean judg">
 <meta property="og:type" content="article">
@@ -570,9 +570,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-java的访问控制" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java的单元测试Junit" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">java的访问控制</h1>
+        <h1 class="article-title">java的单元测试Junit</h1>
     
     <div class="article-meta">
         
@@ -582,7 +582,9 @@
             
                 <a  data-rel="后端">后端</a>/
             
-                <a  data-rel="java">java</a>
+                <a  data-rel="java">java</a>/
+            
+                <a  data-rel="软件测试">软件测试</a>
             
         </span>
         
@@ -590,7 +592,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-03 17:38:43'>2020-02-03 17:07</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-23 23:38:40'>2020-02-23 23:30</time>
         
     </div>
     <div class="article-meta">
@@ -612,7 +614,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#访问控制"><span class="toc-text">访问控制</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Junit"><span class="toc-text">Junit</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -628,61 +630,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h3><p>java的访问控制有四种</p>
-<ul>
-<li>private 私有的，只有本类才能访问</li>
-<li>default 默认,由于default不是关键字，所以通常不写，只有在同一个包下才能访问</li>
-<li>protected 同一个包或者子类均可访问</li>
-<li>public 公开，所有类均能访问</li>
-</ul>
-<p>上述四种均能修饰成员变量，成员方法，构造函数，但是只有default和public可以修饰类</p>
-<p>类内部访问就是直接调用变量，外部访问分两种，作为子类可以直接调用父类的变量，或者要在另一个包的类定义进行实例化类，在调用它的属性或者方法</p>
-<pre><code class="java">//  Visit
-package XXX;
+        <h4 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h4><p>Junit可以针对类中的方法直接让他执行，而不依赖于main函数，即run as -&gt; junit test 即可获得结果，红色进度条代表失败绿色进度条代表成功，如果想对所有测试方法进行测试那么可以使用maven test这样就不用一个个去run as -&gt; junit test了</p>
+<pre><code class="java">public class Triangle {
+    public boolean judgeEdges(int a,int b,int c) {
+        boolean result = true;
+        if (a&lt;=0||b&lt;=0||c&lt;=0) {
+            return false;
+        }
 
-public class Visit {
-    private int v1;
-    int v2;
-    protected int v3;
-    public int v4;
-    private void show1() {
-        System.out.print(v1);
+        if(a+b&lt;=c) {
+            return false;
+        }
+        if(b+c&lt;=a) {
+            return false;
+        }
+        if(a+c&lt;=b) {
+            return false;
+        }
+
+        return result;
     }
-
-    void show2() {
-        System.out.print(v2);
-    }
-
-    protected void show3() {
-        System.out.print(v3);
-    }
-
-    protected void show4() {
-        System.out.println(v4);
-    }
-
 }
 
-
-
-// YYY包下的TestVisit 
-package YYY;
-
-import XXX.Visit;
-
-public class TestVisit extends Visit {
-    void show() {
-        // 以子类方式调用，v2需要同包，v1私有
-        System.out.println(v3);
-        System.out.println(v4);
-        // 以对象调用，由于不同包，这个v是Visit也不是子类所以v3,v2均不能访问，v1私有
-        // 天然无法访问，所以只能访问v4
-        Visit v = new Visit();
-        System.out.println(v.v4);
+public class TriangleTest {
+    @Test
+    public void test() {
+        System.out.print(&quot;hello&quot;);
+        assertEquals(true,new Triangle().judgeEdges(3, 4, 5));
     }
-
-}
-</code></pre>
+}</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1102605958@qq.com </span>
@@ -696,12 +672,12 @@ public class TestVisit extends Visit {
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>java的访问控制</p>
+    <p><span class="copy-title">文章标题:</span>java的单元测试Junit</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Leo">Leo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-02-03, 17:07:54</p>
-    <p><span class="copy-title">最后更新:</span>2020-02-03, 17:38:43</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/03/java%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" title="java的访问控制">http://panxiakai.com/2020/02/03/java%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-23, 23:30:14</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-23, 23:38:40</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/23/java%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95Junit/" title="java的单元测试Junit">http://panxiakai.com/2020/02/23/java%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95Junit/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
